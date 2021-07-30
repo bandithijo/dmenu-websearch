@@ -8,13 +8,14 @@ ifdef::env-github[]
 :tip-caption: :bulb:
 :warning-caption: :warning:
 endif::[]
+:experimental:
 
 Shorthand for web search based on each own query with dmenu.
 
 == 📦 Dependencies
 
-. link:https://tools.suckless.org/dmenu/[dmenu^], dmenu is a dynamic menu for X
-. link:https://github.com/stedolan/jq[jq^], jq is a lightweight and flexible command-line JSON processor
+. link:https://tools.suckless.org/dmenu/[dmenu^] is a dynamic menu for X
+. link:https://github.com/stedolan/jq[jq^] is a lightweight and flexible command-line JSON processor
 
 == 🌎 Web Search Queries
 
@@ -37,12 +38,24 @@ OPTIONS='''
 '''
 ----
 
-IMPORTANT: *Don't give comma `,` in the last element!*
-
-=== 🏗️ How to add new queriey?
+== 🏗️  How to add new queriey?
 
 Just add in the `OPTIONS` array.
 
-== 🏛️  License
+IMPORTANT: *Don't give comma `,` in the last element!*
 
-link:https://raw.githubusercontent.com/bandithijo/dmenu-websearch/master/LICENSE[LICENSE^]
+== 🍲 How to use?
+
+Complete the *menu search* with kbd:[Tab], and write down your keywords.
+
+The form should be like this,
+
+----
+Prefix:Menu <your> <keywords>
+----
+
+NOTE: You're free to define the *prefix menu*. My example is just for ease in explaining.
+
+== 🏛️ Copyright and License
+
+Copyright © 2021 Rizqi Nur Assyaufi. Free use of this software is granted under the terms of the MIT License. See link:https://raw.githubusercontent.com/bandithijo/dmenu-websearch/master/LICENSE[LICENSE^] for details.
