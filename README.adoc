@@ -8,6 +8,7 @@ ifdef::env-github[]
 :tip-caption: :bulb:
 :warning-caption: :warning:
 endif::[]
+:hardbreaks-option:
 :experimental:
 
 Shorthand for web search based on each own query with dmenu.
@@ -38,7 +39,7 @@ OPTIONS='''
 '''
 ----
 
-== 🏗️  How to add new queriey?
+== 🏗️  How to add new quey?
 
 Just add in the `OPTIONS` array.
 
@@ -62,4 +63,5 @@ NOTE: You're free to define the *prefix menu*. My example is just for ease in ex
 
 == 🏛️ Copyright and License
 
-Copyright © 2021 Rizqi Nur Assyaufi. Free use of this software is granted under the terms of the MIT License. See link:https://raw.githubusercontent.com/bandithijo/dmenu-websearch/master/LICENSE[LICENSE^] for details.
+Copyright © 2021 Rizqi Nur Assyaufi. Free use of this software is granted under the terms of the MIT License.
+See link:https://raw.githubusercontent.com/bandithijo/dmenu-websearch/master/LICENSE[LICENSE^] for details.
