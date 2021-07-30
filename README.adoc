@@ -13,12 +13,12 @@ endif::[]
 
 Shorthand for web search based on each own query with dmenu.
 
-== 📦 Dependencies
+== image:.emoji/1f4e6.png[Package,width=30] Dependencies
 
 . link:https://tools.suckless.org/dmenu/[dmenu^] is a dynamic menu for X
 . link:https://github.com/stedolan/jq[jq^] is a lightweight and flexible command-line JSON processor
 
-== 🌎 Web Search Queries
+== image:.emoji/1f30e.png[Globe,width=30] Web Search Queries
 
 [source,bash,linenums]
 ----
@@ -39,15 +39,15 @@ OPTIONS='''
 '''
 ----
 
-== 🏗️  How to add new quey?
+== image:.emoji/1f3d7.png[Building Construction,width=30] How to add new query?
 
 Just add in the `OPTIONS` array.
 
-IMPORTANT: *Don't give comma `,` in the last element!*
+IMPORTANT: Don't give comma `,` in the last element!
 
-== 🍱 How to use?
+== image:.emoji/1f371.png[Bento Box,width=30] How to use?
 
-Complete the *menu search* with kbd:[Tab], and write down your keywords.
+Complete the *perfix menu* with kbd:[Tab], and write down your keywords.
 
 The form should be like this,
 
@@ -55,13 +55,13 @@ The form should be like this,
 Prefix:Menu <your> <keywords>
 ----
 
-NOTE: You're free to define the *prefix menu*. My example is just for ease in explaining.
+TIP: You're free to define the *prefix menu*. My example is just for ease to explaining.
 
-== 🍻 Related Project
+== image:.emoji/1f37b.png[Clinking Beer Mugs,width=30] Related Project
 
 . link:https://github.com/m0rphism/haskell-dmenu-search[haskell-dmenu-search^], dmenu script for searching the web with customizable search engines.
 
-== 🏛️ Copyright and License
+== image:.emoji/1f3db.png[Classical Building,width=30] Copyright and License
 
 Copyright © 2021 Rizqi Nur Assyaufi. Free use of this software is granted under the terms of the MIT License.
 See link:https://raw.githubusercontent.com/bandithijo/dmenu-websearch/master/LICENSE[LICENSE^] for details.
