@@ -36,7 +36,8 @@ OPTIONS='''
 [ "Google:Search:Image", "https://duckduckgo.com/?q=!gi+" ],
 [ "Google:Translate",    "https://translate.google.com/?sl=auto&tl=id&text=" ],
 [ "Ruby:Gems",           "https://rubygems.org/gems/" ],
-[ "Ruby:Toolbox",        "https://www.ruby-toolbox.com/search?q=" ]
+[ "Ruby:Toolbox",        "https://www.ruby-toolbox.com/search?q=" ],
+[ "Twitter:Search",      "https://twitter.com/search?q=" ]
 ]
 '''
 

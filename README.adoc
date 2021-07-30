@@ -44,7 +44,7 @@ Just add in the `OPTIONS` array.
 
 IMPORTANT: *Don't give comma `,` in the last element!*
 
-== 🍲 How to use?
+== 🍱 How to use?
 
 Complete the *menu search* with kbd:[Tab], and write down your keywords.
 
@@ -55,6 +55,10 @@ Prefix:Menu <your> <keywords>
 ----
 
 NOTE: You're free to define the *prefix menu*. My example is just for ease in explaining.
+
+== 🍻 Related Project
+
+. link:https://github.com/m0rphism/haskell-dmenu-search[haskell-dmenu-search^], dmenu script for searching the web with customizable search engines.
 
 == 🏛️ Copyright and License
 
