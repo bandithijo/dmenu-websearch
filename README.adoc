@@ -57,6 +57,12 @@ Prefix:Menu <your> <keywords>
 
 TIP: You're free to define the *prefix menu*. My example is just for ease to explaining.
 
+== image:.emoji/1f69a.png[Truck,width=35] Demo
+
+image:https://i.postimg.cc/gJLPtxbr/gambar-01.gif[demo-01,align=center]
+
+image:https://i.postimg.cc/bJ0WGkxX/gambar-01.gif[demo-02,align=center]
+
 == image:.emoji/1f37b.png[Clinking Beer Mugs,width=30] Related Project
 
 . link:https://github.com/m0rphism/haskell-dmenu-search[haskell-dmenu-search^], dmenu script for searching the web with customizable search engines.
