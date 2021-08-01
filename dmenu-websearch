@@ -48,8 +48,8 @@ OBJ_KEYWORDS=$(echo $OBJ_MENU | cut -d' ' -f2- | tr " " "+")
 
 for i in $(seq 0 $((OBJ_LENGTH - 1))); do
     if [ "$OBJ_SELECTED" = "$(echo $OPTIONS | jq -r --arg i $i '.[($i|tonumber)][0]')" ]; then
-        URL=$(echo $OPTIONS | jq -r --arg i $i '.[($i|tonumber)][1]')
-        QUERY=$(echo $OBJ_KEYWORDS)
-        xdg-open "${URL}${QUERY}" 2> /dev/null
+        URLQUERY=$(echo $OPTIONS | jq -r --arg i $i '.[($i|tonumber)][1]')
+        KEYWORDS=$(echo $OBJ_KEYWORDS)
+        xdg-open "${URLQUERY}${KEYWORDS}" 2> /dev/null
     fi
 done
