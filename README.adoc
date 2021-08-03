@@ -13,12 +13,12 @@ endif::[]
 
 Shorthand for web search based on each own query with dmenu.
 
-== image:.emoji/1f4e6.png[Package,width=30] Dependencies
+== image::.emoji/1f4e6.png[Package,width=30] Dependencies
 
 . link:https://tools.suckless.org/dmenu/[dmenu^] is a dynamic menu for X
 . link:https://github.com/stedolan/jq[jq^] is a lightweight and flexible command-line JSON processor
 
-== image:.emoji/1f30e.png[Globe,width=30] Web Search Queries
+== image::.emoji/1f30e.png[Globe,width=30] Web Search Queries
 
 [source,bash,linenums]
 ----
@@ -39,13 +39,13 @@ OPTIONS='''
 '''
 ----
 
-== image:.emoji/1f3d7.png[Building Construction,width=30] How to add new query?
+== image::.emoji/1f3d7.png[Building Construction,width=30] How to add new query?
 
 Just add in the `OPTIONS` array.
 
 IMPORTANT: Don't give comma `,` in the last element!
 
-== image:.emoji/1f371.png[Bento Box,width=30] How to use?
+== image::.emoji/1f371.png[Bento Box,width=30] How to use?
 
 Complete the *perfix menu* with kbd:[Tab], and write down your keywords.
 
@@ -57,17 +57,17 @@ Prefix:Menu <your> <keywords>
 
 TIP: You're free to define the *prefix menu*. My example is just for ease to explaining.
 
-== image:.emoji/1f69a.png[Truck,width=35] Demo
+== image::.emoji/1f69a.png[Truck,width=35] Demo
 
-image:https://i.postimg.cc/gJLPtxbr/gambar-01.gif[demo-01,align=center]
+image::https://i.postimg.cc/gJLPtxbr/gambar-01.gif[demo-01,align=center]
 
-image:https://i.postimg.cc/K8g9ktb9/gambar-02.gif[demo-02,align=center]
+image::https://i.postimg.cc/K8g9ktb9/gambar-02.gif[demo-02,align=center]
 
-== image:.emoji/1f37b.png[Clinking Beer Mugs,width=30] Related Project
+== image::.emoji/1f37b.png[Clinking Beer Mugs,width=30] Related Project
 
 . link:https://github.com/m0rphism/haskell-dmenu-search[haskell-dmenu-search^], dmenu script for searching the web with customizable search engines.
 
-== image:.emoji/1f3db.png[Classical Building,width=30] Copyright and License
+== image::.emoji/1f3db.png[Classical Building,width=30] Copyright and License
 
 Copyright © 2021 Rizqi Nur Assyaufi. Free use of this software is granted under the terms of the MIT License.
 See link:https://raw.githubusercontent.com/bandithijo/dmenu-websearch/master/LICENSE[LICENSE^] for details.
