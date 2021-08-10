@@ -36,8 +36,8 @@ fi
 OPTIONS="
 [
 ${FILEOPT}
-[ \"Add:New:Query\", \"add_query\" ],
-[ \"Delete:Query\",  \"delete_query\" ]
+[ \"Add:New:Query\", \"\" ],
+[ \"Delete:Query\",  \"\" ]
 ]
 "
 
