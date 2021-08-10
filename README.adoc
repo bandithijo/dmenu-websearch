@@ -66,6 +66,7 @@ image::.image/gambar-02.gif[demo-02,align=center]
 == image:.emoji/1f37b.png[Clinking Beer Mugs,width=30] Related Project
 
 . link:https://github.com/m0rphism/haskell-dmenu-search[haskell-dmenu-search^], dmenu script for searching the web with customizable search engines.
+. link:https://gitlab.com/surfraw/Surfraw/[surfraw^], Shell Users' Revolutionary Front Rage Against the Web.
 
 == image:.emoji/1f3db.png[Classical Building,width=30] Copyright and License
 
