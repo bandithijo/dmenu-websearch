@@ -20,10 +20,9 @@ Shorthand for web search based on each own query with dmenu.
 
 == image:.emoji/1f30e.png[Globe,width=30] Web Search Queries
 
+.urlquery
 [source,bash,linenums]
 ----
-OPTIONS='''
-[
 [ "Arch:Manpage",        "https://man.archlinux.org/search?q=" ],
 [ "Arch:Wiki",           "https://wiki.archlinux.org/index.php?search=" ],
 [ "Arch:Packages",       "https://archlinux.org/packages/?q=" ],
@@ -34,16 +33,12 @@ OPTIONS='''
 [ "Google:Search:Image", "https://duckduckgo.com/?q=!gi+" ],
 [ "Google:Translate",    "https://translate.google.com/?sl=auto&tl=id&text=" ],
 [ "Ruby:Gems",           "https://rubygems.org/gems/" ],
-[ "Ruby:Toolbox",        "https://www.ruby-toolbox.com/search?q=" ]
-]
-'''
+[ "Ruby:Toolbox",        "https://www.ruby-toolbox.com/search?q=" ],
 ----
 
 == image:.emoji/1f3d7.png[Building Construction,width=30] How to add new query?
 
-Just add in the `OPTIONS` array.
-
-IMPORTANT: Don't give comma `,` in the last element!
+Just add new URL query via *Add:New:Query* menu. It will asking about value of *prefix menu* & *URL query*.
 
 == image:.emoji/1f371.png[Bento Box,width=30] How to use?
 
