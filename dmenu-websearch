@@ -36,7 +36,8 @@ fi
 OPTIONS="
 [
 ${FILEOPT}
-[ \"Add:New:Query\",     \"add_query\" ]
+[ \"Add:New:Query\", \"add_query\" ],
+[ \"Delete:Query\",  \"delete_query\" ]
 ]
 "
 
@@ -54,6 +55,15 @@ add_query() {
     exit
 }
 
+delete_query() {
+    OBJ_MENU=$(echo $OPTIONS | jq -r ".[][0]" | $MENU -i -p "Delete Menu:")
+    OBJ_SELECTED=$(echo $OBJ_MENU | cut -d' ' -f1)
+    if [ ! -z $OBJ_SELECTED ]; then
+        sed -i "/$OBJ_SELECTED/d" ./urlquery
+    fi
+    exit
+}
+
 OBJ_LENGTH=$(echo $OPTIONS | jq length)
 OBJ_MENU=$(echo $OPTIONS | jq -r ".[][0]" | $MENU -i -p " WebSearch:")
 OBJ_SELECTED=$(echo $OBJ_MENU | cut -d' ' -f1)
@@ -62,6 +72,10 @@ OBJ_KEYWORDS=$(echo $OBJ_MENU | cut -d' ' -f2- | tr " " "+")
 for i in $(seq 0 $((OBJ_LENGTH - 1))); do
     if [ "$OBJ_SELECTED" = "Add:New:Query" ]; then
         add_query
+    fi
+
+    if [ "$OBJ_SELECTED" = "Delete:Query" ]; then
+        delete_query
     fi
 
     if [ "$OBJ_SELECTED" = "$(echo $OPTIONS | jq -r --arg i $i '.[($i|tonumber)][0]')" ]; then
