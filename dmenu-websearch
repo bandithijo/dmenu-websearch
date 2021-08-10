@@ -42,8 +42,15 @@ ${FILEOPT}
 
 add_query() {
     PREFIXMENU=$(echo "" | dmenu -p "Add prefix menu:")
-    URLQUERY=$(echo "" | dmenu -p "Add url query:")
-    echo "[ \"$PREFIXMENU\", \"$URLQUERY\" ]," >> urlquery
+    if [ ! -z $PREFIXMENU ]; then
+        URLQUERY=$(echo "" | dmenu -p "Add url query:")
+    fi
+
+    if [ ! -z $PREFIXMENU ] || [ ! -z $URLQUERY ]; then
+        echo "[ \"$PREFIXMENU\", \"$URLQUERY\" ]," >> urlquery
+        exit
+    fi
+
     exit
 }
 
