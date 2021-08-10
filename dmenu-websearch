@@ -53,7 +53,7 @@ add_query() {
     fi
 
     if [ ! -z $PREFIXMENU ] || [ ! -z $URLQUERY ]; then
-        echo "[ \"$PREFIXMENU\", \"$URLQUERY\" ]," >> urlquery
+        echo "[ \"$PREFIXMENU\", \"$URLQUERY\" ]," >> $FILE
         exit
     fi
 
@@ -64,7 +64,7 @@ delete_query() {
     OBJ_MENU=$(echo $OPTIONS | jq -r ".[][0]" | $MENU -i -p "Delete Menu:")
     OBJ_SELECTED=$OBJ_MENU
     if [ ! -z $OBJ_SELECTED ]; then
-        sed -i "/$OBJ_SELECTED/d" ./urlquery
+        sed -i "/$OBJ_SELECTED/d" $FILE
     fi
     exit
 }
