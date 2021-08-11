@@ -56,7 +56,7 @@ add_query() {
 }
 
 delete_query() {
-    OBJ_MENU=$(echo $OPTIONS | jq -r ".[][0]" | $MENU -i -p "Delete Menu:")
+    OBJ_MENU=$(echo $OPTIONS | jq -r ".[][0]" | head -n -2 | $MENU -i -p "Delete Menu:")
     OBJ_SELECTED=$OBJ_MENU
     if [ ! -z $OBJ_SELECTED ]; then
         sed -i "/$OBJ_SELECTED/d" $FILE
