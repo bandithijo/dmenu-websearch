@@ -26,12 +26,11 @@ MENU="dmenu"
 
 FILE="./urlquery"
 
-if [ -f $FILE  ]; then
-    FILEOPT=$(cat $FILE)
-else
+if [ ! -f $FILE  ]; then
     cp urlquery.example urlquery
-    FILEOPT=$(cat $FILE)
 fi
+
+FILEOPT=$(cat $FILE)
 
 OPTIONS="
 [
