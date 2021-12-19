@@ -26,7 +26,7 @@ MENU="dmenu"
 
 FILE="./urlquery"
 
-if [ ! -f $FILE  ]; then
+if [ ! -f $FILE ]; then
     cp urlquery.example urlquery
 fi
 
