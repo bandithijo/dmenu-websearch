@@ -24,29 +24,54 @@
 
 MENU="dmenu"
 
-OPTIONS='''
+FILE="./urlquery"
+
+if [ ! -f $FILE  ]; then
+    cp urlquery.example urlquery
+fi
+
+FILEOPT=$(cat $FILE)
+
+OPTIONS="
 [
-[ "Arch:Manpage",        "https://man.archlinux.org/search?q=" ],
-[ "Arch:Wiki",           "https://wiki.archlinux.org/index.php?search=" ],
-[ "Arch:Packages",       "https://archlinux.org/packages/?q=" ],
-[ "Arch:Packages:AUR",   "https://aur.archlinux.org/packages/?K=" ],
-[ "DuckDuckGo:Search",   "https://duckduckgo.com/?q=" ],
-[ "GitHub:Search",       "https://github.com/search?q=" ],
-[ "Google:Search",       "https://duckduckgo.com/?q=!g+" ],
-[ "Google:Search:Image", "https://duckduckgo.com/?q=!gi+" ],
-[ "Google:Translate",    "https://translate.google.com/?sl=auto&tl=id&text=" ],
-[ "Ruby:Gems",           "https://rubygems.org/gems/" ],
-[ "Ruby:Toolbox",        "https://www.ruby-toolbox.com/search?q=" ],
-[ "Twitter:Search",      "https://twitter.com/search?q=" ]
+${FILEOPT}
+[ \"Add:New:Query\", \"\" ],
+[ \"Delete:Query\",  \"\" ]
 ]
-'''
+"
 
 OBJ_LENGTH=$(echo $OPTIONS | jq length)
-OBJ_MENU=$(echo $OPTIONS | jq -r ".[][0]" | $MENU -i -p " WebSearch")
+OBJ_MENU=$(echo $OPTIONS | jq -r ".[][0]" | $MENU -i -p " WebSearch:")
 OBJ_SELECTED=$(echo $OBJ_MENU | cut -d' ' -f1)
 OBJ_KEYWORDS=$(echo $OBJ_MENU | cut -d' ' -f2- | tr " " "+")
 
+add_query() {
+    PREFIXMENU=$(echo "" | dmenu -p "Add prefix menu:")
+    if [ ! -z $PREFIXMENU ]; then
+        URLQUERY=$(echo "" | dmenu -p "Add url query:")
+        echo "[ \"$PREFIXMENU\", \"$URLQUERY\" ]," >> $FILE
+    fi
+    exit
+}
+
+delete_query() {
+    OBJ_MENU=$(echo $OPTIONS | jq -r ".[][0]" | head -n -2 | $MENU -i -p "Delete Menu:")
+    OBJ_SELECTED=$OBJ_MENU
+    if [ ! -z $OBJ_SELECTED ]; then
+        sed -i "/$OBJ_SELECTED/d" $FILE
+    fi
+    exit
+}
+
 for i in $(seq 0 $((OBJ_LENGTH - 1))); do
+    if [ "$OBJ_SELECTED" = "Add:New:Query" ]; then
+        add_query
+    fi
+
+    if [ "$OBJ_SELECTED" = "Delete:Query" ]; then
+        delete_query
+    fi
+
     if [ "$OBJ_SELECTED" = "$(echo $OPTIONS | jq -r --arg i $i '.[($i|tonumber)][0]')" ]; then
         URLQUERY=$(echo $OPTIONS | jq -r --arg i $i '.[($i|tonumber)][1]')
         KEYWORDS=$(echo $OBJ_KEYWORDS)

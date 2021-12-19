@@ -20,10 +20,9 @@ Shorthand for web search based on each own query with dmenu.
 
 == image:.emoji/1f30e.png[Globe,width=30] Web Search Queries
 
+.urlquery
 [source,bash,linenums]
 ----
-OPTIONS='''
-[
 [ "Arch:Manpage",        "https://man.archlinux.org/search?q=" ],
 [ "Arch:Wiki",           "https://wiki.archlinux.org/index.php?search=" ],
 [ "Arch:Packages",       "https://archlinux.org/packages/?q=" ],
@@ -34,16 +33,12 @@ OPTIONS='''
 [ "Google:Search:Image", "https://duckduckgo.com/?q=!gi+" ],
 [ "Google:Translate",    "https://translate.google.com/?sl=auto&tl=id&text=" ],
 [ "Ruby:Gems",           "https://rubygems.org/gems/" ],
-[ "Ruby:Toolbox",        "https://www.ruby-toolbox.com/search?q=" ]
-]
-'''
+[ "Ruby:Toolbox",        "https://www.ruby-toolbox.com/search?q=" ],
 ----
 
 == image:.emoji/1f3d7.png[Building Construction,width=30] How to add new query?
 
-Just add in the `OPTIONS` array.
-
-IMPORTANT: Don't give comma `,` in the last element!
+Just add new URL query via *Add:New:Query* menu. It will asking about value of *prefix menu* & *URL query*.
 
 == image:.emoji/1f371.png[Bento Box,width=30] How to use?
 
@@ -62,6 +57,16 @@ TIP: You're free to define the *prefix menu*. My example is just for ease to exp
 image::.image/gambar-01.gif[demo-01,align=center]
 
 image::.image/gambar-02.gif[demo-02,align=center]
+
+== TODO
+
+- [x] Create a menu to add a query
+- [x] Retrieve query url value from urlquery file
+- [x] Create urlquery.example and enter the urlquery into gitignore
+- [x] If urlquery does not exist, create new from urlquery.example
+- [x] Do not put in the urlquery file if the menu prefix & query url are empty
+- [x] Create a menu to delete the selected data url query from the urlquery file
+- [ ] Create a menu to edit the selected data url query from the urlquery file
 
 == image:.emoji/1f37b.png[Clinking Beer Mugs,width=30] Related Project
 
