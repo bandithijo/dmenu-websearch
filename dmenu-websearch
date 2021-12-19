@@ -66,18 +66,22 @@ delete_query() {
     exit
 }
 
-for i in $(seq 0 $((OBJ_LENGTH - 1))); do
-    if [ "$OBJ_SELECTED" = "Add:New:Query" ]; then
-        add_query
-    fi
+main() {
+    for i in $(seq 0 $((OBJ_LENGTH - 1))); do
+        if [ $OBJ_SELECTED = "Add:New:Query" ]; then
+            add_query
+        fi
 
-    if [ "$OBJ_SELECTED" = "Delete:Query" ]; then
-        delete_query
-    fi
+        if [ $OBJ_SELECTED = "Delete:Query" ]; then
+            delete_query
+        fi
 
-    if [ "$OBJ_SELECTED" = "$(echo $OPTIONS | jq -r --arg i $i '.[($i|tonumber)][0]')" ]; then
-        URLQUERY=$(echo $OPTIONS | jq -r --arg i $i '.[($i|tonumber)][1]')
-        KEYWORDS=$(echo $OBJ_KEYWORDS)
-        xdg-open "${URLQUERY}${KEYWORDS}" 2> /dev/null
-    fi
-done
+        if [ $OBJ_SELECTED = $(echo $OPTIONS | jq -r --arg i $i '.[($i|tonumber)][0]') ]; then
+            URLQUERY=$(echo $OPTIONS | jq -r --arg i $i '.[($i|tonumber)][1]')
+            KEYWORDS=$(echo $OBJ_KEYWORDS)
+            xdg-open "${URLQUERY}${KEYWORDS}" 2> /dev/null
+        fi
+    done
+}
+
+main
