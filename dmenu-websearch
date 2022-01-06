@@ -46,9 +46,9 @@ OBJ_SELECTED=$(echo $OBJ_MENU | cut -d' ' -f1)
 OBJ_KEYWORDS=$(echo $OBJ_MENU | cut -d' ' -f2- | tr " " "+")
 
 add_query() {
-    PREFIXMENU=$(echo "" | dmenu -p "Add prefix menu:")
+    PREFIXMENU=$(echo "" | dmenu -p "Add prefix menu:" <&-)
     if [ ! -z $PREFIXMENU ]; then
-        URLQUERY=$(echo "" | dmenu -p "Add url query:")
+        URLQUERY=$(echo "" | dmenu -p "Add url query:" <&-)
         echo "[ \"$PREFIXMENU\", \"$URLQUERY\" ]," >> $FILE
     fi
     exit
