@@ -7,6 +7,6 @@
 [ "Google:Search", "https://duckduckgo.com/?q=!g+" ],
 [ "Google:Search:Image", "https://duckduckgo.com/?q=!gi+" ],
 [ "Google:Translate", "https://translate.google.com/?sl=auto&tl=id&text=" ],
-[ "Ruby:Gems", "https://rubygems.org/gems/" ],
+[ "Ruby:Gems", "https://rubygems.org/search?query=" ],
 [ "Ruby:Toolbox", "https://www.ruby-toolbox.com/search?q=" ],
 [ "Twitter:Search", "https://twitter.com/search?q=" ],
