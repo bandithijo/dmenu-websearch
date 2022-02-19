@@ -24,7 +24,9 @@
 
 MENU="dmenu"
 
-FILE="./urlquery"
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+
+FILE="$SCRIPT_DIR/urlquery"
 
 if [ ! -f $FILE ]; then
     cp urlquery.example urlquery
